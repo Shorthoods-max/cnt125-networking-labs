@@ -1,0 +1,103 @@
+4221_Rtr_Sn#sh run
+Building configuration...
+
+
+Current configuration : 1178 bytes
+!
+! Last configuration change at 16:21:03 UTC Thu Feb 13 2025
+!
+version 16.8
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname 4221_Rtr_Sn
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+license udi pid ISR4221/K9 sn FGL2252102F
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 172.16.128.1 255.255.192.0
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ ip address 172.16.64.2 255.255.192.0
+ negotiation auto
+!
+router ospf 2
+ network 172.16.0.0 0.0.63.255 area 0
+ network 172.16.64.0 0.0.63.255 area 0
+ network 172.16.128.0 0.0.63.255 area 0
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ transport input none
+ stopbits 1
+line vty 0 4
+ login
+!
+wsma agent exec
+!
+wsma agent config
+!
+wsma agent filesys
+!
+wsma agent notify
+!
+!
+end
