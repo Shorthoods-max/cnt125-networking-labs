@@ -1,0 +1,8 @@
+What was the Name  and Type of Hypervisor that we used today for lab - Type 1 or Type 2? Explain your answer. VMWare Wwork Station its a type 2 
+What is the Bridged vNIC setting? the bridge uses the host network and gets its own ip address it can talk directly to the other devices in the same network
+What is the NAT vNIC setting? Virtual Machine uses the host ip address to connect to the network and othjer devices see the host ip not the VM
+What are the 3 common Cloud Service Models? 
+Iaas Paas Saas
+What are the 3 biggest Cloud Service Providers of 2024? (Include source)
+Hint - Search for Cloud Service Providers Market Share
+Amazon Web Services Azure Google Cloud 

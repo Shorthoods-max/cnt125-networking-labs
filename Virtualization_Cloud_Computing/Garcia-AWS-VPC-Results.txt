@@ -1,0 +1,66 @@
+
+[Executed at: Fri Jan 31 21:38:23 PST 2025]
+
+gradeFile = /mnt/vocwork5/grader/eee_G_2692329/asn3815030_2/asn3815031_1/tmp/temp_uf_01312025/.nirW3f
+reportFile =/mnt/vocwork5/grader/eee_G_2692329/asn3815030_2/asn3815031_1/tmp/temp_uf_01312025/.l1cDn1
+/mnt/vocwork5/grader/eee_G_2692329/asn3815030_2/asn3815031_1/tmp/temp_uf_01312025/.nirW3f
+Started: 2025-01-31 21:38:16
+region: us-east-1
+profile: default
+
+Evaluating Task 1 - VPC created correctly
+correct_cidr: True
+found VPC with correct CIDR
+correct_private_subnet_cidr: True
+found subnet with correct CIDR for private subnet:subnet-0917e5ccf4cb895bb
+correct_private_subnet_name: True
+found subnet with correct Name tag for private subnet:lab-subnet-private1-us-east-1a
+correct_public_subnet_cidr: True
+found subnet with correct CIDR for public subnet:subnet-0af4a11375fae6849
+correct_public_subnet_name: True
+found subnet with correct Name tag for public subnet:lab-subnet-public1-us-east-1a
+Task 1 - Success! The VPC named lab-vpc was found and correctly configured.
+
+Evaluating Task 2a - New subnets created correctly
+correct_private2_subnet_cidr: True
+found subnet with correct CIDR for private subnet2:subnet-0a642c19b4e60d50a
+correct_private2_subnet_name: True
+found subnet with correct Name tag for private subnet 2:lab-subnet-private2
+correct_public2_subnet_cidr: True
+found subnet with correct CIDR for public subnet2:subnet-057c4ac74673d41ce
+correct_public2_subnet_name: True
+found subnet with correct Name tag for public subnet2:lab-subnet-public2
+Task 2a - Success! The additional subnets were created correctly.
+
+Evaluating Task 2b - Subnet route table association
+found subnet: subnet-0917e5ccf4cb895bb
+found subnet: subnet-0a642c19b4e60d50a
+lab-subnet-private2 subnet properly associated with the lab-rtb-private1-us-east-1a route table.
+found subnet: subnet-057c4ac74673d41ce
+lab-subnet-public2 subnet properly associated with the lab-rtb-public route table.
+found subnet: subnet-0af4a11375fae6849
+Task 2b - Success! The lab-subnet-private2 subnet and lab-subnet-public2 subnet were both properly associated with the correct route tables.
+
+Evaluating Task 3 - Security group created correctly
+Security Group created successfully
+Web Security Group has been properly configured
+Task 3 - Success! The security group was created correctly.
+
+Evaluating Task 4a - EC2 instance created correctly
+found instance with name Web Server 1.
+instance_type: t2.micro
+instance_subnet: subnet-057c4ac74673d41ce
+instance_security_group: Web Security Group
+EC2 instance created successfully
+Task 4a - Success! The EC2 instance was created correctly.
+
+Evaluating Task 4b - EC2 instance website accessible
+instance_public_ip: 54.82.14.95
+url: http://54.82.14.95
+EC2 instance created successfully
+Task 4b - Success! The website was accessible.
+
+Completed: 2025-01-31 21:38:23
+
+Back in submit.sh...
+end

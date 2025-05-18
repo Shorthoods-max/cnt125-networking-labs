@@ -1,0 +1,37 @@
+Executed at: Fri Jan 31 9:04:10 PST 2025]
+
+gradeFile = /mnt/vocwork5/grader/eee_G_2692329/asn3815028_1/asn3815029_1/tmp/temp_uf_01312025/.9ltIgp
+reportFile =/mnt/vocwork5/grader/eee_G_2692329/asn3815028_1/asn3815029_1/tmp/temp_uf_01312025/.64bThZ
+/mnt/vocwork5/grader/eee_G_2692329/asn3815028_1/asn3815029_1/tmp/temp_uf_01312025/.9ltIgp
+Started: 2025-01-31 09:04:03
+region: us-east-1
+profile: default
+
+Evaluating TASK 2a - Added user-1 to S3-Support group
+Task 2a - Success! user-1 was found in the S3-Support IAM group.
+
+Evaluating TASK 2b - Added user-2 to EC2-Support group
+Task 2b - Success! user-2 was found in the EC2-Support IAM group.
+
+Evaluating TASK 2c - Added user-3 to EC2-Admin group
+Task 2c - Success! user-3 was found in the EC2-Admin IAM group.
+
+Evaluating TASK 3a - user-1 logged in
+Task 3a - Success! Evidence found that user-1 logged in.
+
+Evaluating TASK 3b - user-2 logged in
+Task 3b - Success! Evidence found that user-2 logged in.
+
+Evaluating TASK 3c - user-2 EC2 stop instance attempt
+Task 3c - Success! Evidence found that user-2 attempted to stop the LabHost instance.
+
+Evaluating TASK 3d - user-3 logged in
+Task 3d - Success! Evidence found that user-3 logged in.
+
+Evaluating TASK 3e - user-3 EC2 stop instance attempt
+Task 3e - Success! Evidence found that user-3 attempted to stop the LabHost instance.
+
+Completed: 2025-01-31 09:04:09
+
+Back in submit.sh...
+end
