@@ -1,0 +1,14 @@
+1. What is NAT and how is it useful to implement NAT on our router for the WLAN?
+NAT allows multiple devices on a local network to access the internet using one public IP. It helps conserve IP addresses and hides internal addresses for security.
+
+2. What is DHCP and how is it useful to implement DHCP on our router for the WLAN?
+DHCP automatically assigns IP addresses to devices on the network. It simplifies setup and prevents IP conflicts.
+
+3. Describe how the ACL was created and implemented to filter ONLY the wireless user traffic?
+The ACL was set to match the IP range used by wireless users and applied to the wireless interface to filter only their traffic.
+
+4. In an SNMP-managed network, what is a Trap?
+A Trap is an alert sent by a network device to notify the management system of an event or issue.
+
+5. How is a TFTP Server useful for network management?
+A TFTP server helps with backing up and restoring configurations, firmware upgrades, and transferring files between network devices.
