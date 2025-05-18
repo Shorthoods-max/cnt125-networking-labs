@@ -1,0 +1,167 @@
+Btm_SW_RISK#show run
+Building configuration...
+
+Current configuration : 3825 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Btm_SW_RISK
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$80A3$50QoIiJxT449T/XJagFgX/
+!
+username Edward password 0 password
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2378352768
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2378352768
+ revocation-check none
+ rsakeypair TP-self-signed-2378352768
+!
+!
+crypto pki certificate chain TP-self-signed-2378352768
+ certificate self-signed 01
+  30820244 308201AD A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32333738 33353237 3638301E 170D3933 30333031 30303031
+  35355A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 33373833
+  35323736 3830819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100D540 D3CB2408 00BACADF 4B319FA8 E1B62B98 86D68837 5E038DBD 1FE43341
+  2C718C56 951D189E D9249853 0D1B7D2F D5A15CD2 0864AD92 F146D339 1B28A686
+  40D5D5AC E232E4F3 101AA68C 432F6B82 0A0826EA 575B7FCB AC559261 504E0EAE
+  AA7394FA 80F7524A 3A8BDB60 F3480CB7 4DC7B187 46054068 16FAAC9D D341512E
+  04FF0203 010001A3 6C306A30 0F060355 1D130101 FF040530 030101FF 30170603
+  551D1104 10300E82 0C42746D 5F53575F 5249534B 2E301F06 03551D23 04183016
+  8014DA02 BFD7DA32 128302C2 E7920E4D 5D1E8163 EFC1301D 0603551D 0E041604
+  14DA02BF D7DA3212 8302C2E7 920E4D5D 1E8163EF C1300D06 092A8648 86F70D01
+  01040500 03818100 35F04FEE 26E033E9 7D010DA9 BBB455E2 1EF6BE17 A97F6CA6
+  95A45079 369DEC17 2D5E3504 3023BC4E 7761479A A5AD5D8A 97B1A005 75CABB93
+  E57E10A1 CE8EEACC AAE90DE9 BE5ECA70 F7108426 F1A25640 D8A35F19 7C040B51
+  E44251D8 02FB92E1 562E3BCA FEB42BC4 13FD4337 91FC82EA 717422BF 4AF013AD
+  74ECCF7B 456F51CB
+  quit
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 1866.da2a.1f43 vlan access
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+ shutdown
+!
+interface FastEthernet0/12
+ shutdown
+!
+interface FastEthernet0/13
+ shutdown
+!
+interface FastEthernet0/14
+ shutdown
+!
+interface FastEthernet0/15
+ shutdown
+!
+interface FastEthernet0/16
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ shutdown
+!
+interface FastEthernet0/19
+ shutdown
+!
+interface FastEthernet0/20
+ shutdown
+!
+interface FastEthernet0/21
+ shutdown
+!
+interface FastEthernet0/22
+ shutdown
+!
+interface FastEthernet0/23
+ shutdown
+!
+interface FastEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 160.60.128.2 255.255.192.0
+!
+ip default-gateway 160.60.128.1
+ip http server
+ip http secure-server
+banner motd ^CWelcome to the Bottom Switch^C
+!
+line con 0
+line vty 0 4
+ login local
+ transport input telnet
+line vty 5 15
+ login local
+ transport input telnet
+!
+end
+
+Btm_SW_RISK#
