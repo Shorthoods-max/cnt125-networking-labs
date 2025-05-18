@@ -1,0 +1,189 @@
+VoIP_RTR>show run
+               ^
+% Invalid input detected at '^' marker.
+
+VoIP_RTR>ena
+VoIP_RTR#show run
+Building configuration...
+
+Current configuration : 2448 bytes
+!
+! Last configuration change at 09:31:38 eastern Wed Mar 26 2025
+! NVRAM config last updated at 09:32:55 eastern Wed Mar 26 2025
+!
+version 12.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname VoIP_RTR
+!
+boot-start-marker
+boot-end-marker
+!
+!
+memory-size iomem 5
+clock timezone eastern 0
+no aaa new-model
+ip subnet-zero
+!
+!
+ip cef
+ip dhcp excluded-address 172.16.64.1 172.16.64.10
+ip dhcp excluded-address 172.16.128.1 172.16.128.10
+!
+ip dhcp pool PC
+   network 172.16.64.0 255.255.192.0
+   default-router 172.16.64.1
+   dns-server 8.8.8.8
+   option 150 ip 172.16.128.1
+!
+ip dhcp pool VOICE
+   network 172.16.128.0 255.255.192.0
+   default-router 172.16.128.1
+   dns-server 8.8.8.8
+   option 150 ip 172.16.128.1
+!
+!
+ip ips po max-events 100
+no ftp-server write-enable
+!
+voice-card 0
+ no dspfarm
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no crypto isakmp ccm
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.1
+ description Admin VLAN 1
+ encapsulation dot1Q 1 native
+ ip address 172.16.0.1 255.255.192.0
+!
+interface FastEthernet0/0.10
+ description PC VLAN 10
+ encapsulation dot1Q 10
+ ip address 172.16.64.1 255.255.192.0
+ no cdp enable
+!
+interface FastEthernet0/0.20
+ description VOICE VLAN 20
+ encapsulation dot1Q 20
+ ip address 172.16.128.1 255.255.192.0
+!
+interface FastEthernet0/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface BRI0/0/0
+ no ip address
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+ shutdown
+ no fair-queue
+ clockrate 125000
+!
+interface Serial0/1/1
+ no ip address
+ shutdown
+ clockrate 125000
+!
+interface Serial0/2/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/3/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+ip classless
+!
+!
+ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+telephony-service
+ max-ephones 12
+ max-dn 12
+ ip source-address 172.16.128.1 port 2000
+ system message The Shire
+ create cnf-files version-stamp 7960 Mar 26 2025 09:24:50
+ dialplan-pattern 1 7177807... extension-length 4
+ max-conferences 8
+!
+!
+ephone-dn  1
+ number 7001
+ name Edward Garcia
+!
+!
+ephone-dn  2
+ number 7002
+ name Samwise gamgee
+!
+!
+ephone  1
+ mac-address 001D.A219.F8AD
+ type 7960
+ button  1:1
+!
+!
+!
+ephone  2
+ mac-address 0014.F28D.CC55
+ type 7960
+ button  1:2
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+warm-reboot
+scheduler allocate 20000 1000
+!
+end
+
+VoIP_RTR#

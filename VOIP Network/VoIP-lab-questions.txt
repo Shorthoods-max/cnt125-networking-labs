@@ -1,0 +1,11 @@
+what codec was being used to encode the voice data for this voip network?
+g.711 was used.
+
+what was the signaling protocol (setup protocol) for this voip network?
+sccp (skinny) was used.
+
+what was the transport protocol (voice data carrying protocol) for this voip network?
+udp was used.
+
+what is a model # and cost of an ip phone (like we used in the lab) that could be used for a voip network? (include source)
+cisco 7942 ip phone, around $30 used on ebay.com
