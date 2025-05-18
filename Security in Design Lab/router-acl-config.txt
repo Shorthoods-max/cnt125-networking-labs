@@ -1,0 +1,161 @@
+ACL_ROUTER#show run
+Building configuration...
+
+Current configuration : 2315 bytes
+!
+version 12.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname ACL_ROUTER
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$89ZP$hnEwF3Lvn4nt4l8j7vr5i1
+!
+memory-size iomem 5
+no aaa new-model
+ip subnet-zero
+!
+!
+ip cef
+!
+!
+ip domain name cnt.org
+ip ips po max-events 100
+no ftp-server write-enable
+!
+voice-card 0
+ no dspfarm
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username edward password 0 password
+!
+!
+no crypto isakmp ccm
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.1
+ description ROUTER INTERFACE FOR ADMIN VLAN 1
+ encapsulation dot1Q 1 native
+ ip address 172.16.0.1 255.255.192.0
+!
+interface FastEthernet0/0.10
+ description INTERFACE FOR EMPLOYEE VLAN 10
+ encapsulation dot1Q 10
+ ip address 172.16.64.1 255.255.192.0
+ ip nat inside
+ ip virtual-reassembly
+!
+interface FastEthernet0/0.20
+ description INTERFACE FOR VISTOR VLAN 20
+ encapsulation dot1Q 20
+ ip address 172.16.128.1 255.255.192.0
+ ip access-group 101 in
+ ip nat inside
+ ip virtual-reassembly
+!
+interface FastEthernet0/1
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1.10
+ ip nat inside
+ ip virtual-reassembly
+!
+interface FastEthernet0/1.20
+ ip nat inside
+ ip virtual-reassembly
+!
+interface BRI0/0/0
+ no ip address
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+ shutdown
+ no fair-queue
+ clockrate 125000
+!
+interface Serial0/1/1
+ no ip address
+ shutdown
+ clockrate 125000
+!
+interface Serial0/2/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/3/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+ip classless
+!
+!
+ip http server
+no ip http secure-server
+ip nat inside source list 1 interface FastEthernet0/1 overload
+ip nat inside source list 2 interface FastEthernet0/1 overload
+!
+access-list 1 permit 172.16.64.0 0.0.63.255
+access-list 2 permit 172.16.128.0 0.0.63.255
+access-list 101 deny   tcp 172.16.128.0 0.0.63.255 any eq telnet
+access-list 101 deny   tcp 172.16.128.0 0.0.63.255 any eq 22
+access-list 101 permit ip any any
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password cisco
+ login
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+warm-reboot
+scheduler allocate 20000 1000
+!
+end
+
+ACL_ROUTER#

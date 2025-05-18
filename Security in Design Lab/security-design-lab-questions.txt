@@ -1,0 +1,33 @@
+what is meant by a “security policy” when it comes to networks?
+it's basically the rules and guidelines for how a network should be protected it covers what users can and can’t do and how systems should be secured
+
+what is meant by “device hardening”?
+it means making a device more secure by turning off stuff you don’t need setting strong passwords updating firmware and locking it down overall
+
+how can you find the “top threats” that it admins should be aware of daily?
+i’d check cybersecurity blogs alerts from sites like cisa or vendors or just use threat intel tools newsletters help too
+
+the hardware firewall you configured in the lab – how would you classify this firewall? explain your answer!!
+i’d call it a stateful hardware firewall since it monitors traffic and blocks or allows stuff based on rules we set we used a fortigate in the lab for that
+
+how can a network device (firewall or router) be assessed for any weaknesses?
+you can scan it using tools like nmap or nessus also checking open ports and the current config helps a lot
+
+what is an acl (access control list)?
+it’s just a list of rules to allow or block certain network traffic like a filter based on ips ports or protocols
+
+where are acls typically implemented?
+usually on routers and firewalls but they can also be used on switches depending on the setup
+
+what security best practice did we do on the router & switch?
+we set up passwords enabled ssh disabled unused ports and added acls to control what traffic gets through
+
+the windows firewall you configured in the lab – how would you classify this firewall? explain your answer!!
+it’s a hostbased firewall it only protects that specific computer by managing what traffic can come in or go out
+
+what are the common tcp port #'s for the following protocols?
+ftp: 21
+ssh: 22
+telnet: 23
+http: 80
+https: 443

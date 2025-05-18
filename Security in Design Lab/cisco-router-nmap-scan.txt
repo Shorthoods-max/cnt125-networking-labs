@@ -1,0 +1,68 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-03 10:41 Eastern Daylight Time
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Initiating ARP Ping Scan at 10:41
+Scanning 172.16.128.1 [1 port]
+Completed ARP Ping Scan at 10:41, 0.09s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 10:41
+Completed Parallel DNS resolution of 1 host. at 10:41, 0.03s elapsed
+Initiating SYN Stealth Scan at 10:41
+Scanning 172.16.128.1 [1000 ports]
+Discovered open port 80/tcp on 172.16.128.1
+Completed SYN Stealth Scan at 10:41, 1.66s elapsed (1000 total ports)
+Initiating Service scan at 10:41
+Scanning 1 service on 172.16.128.1
+Completed Service scan at 10:41, 6.03s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 172.16.128.1
+NSE: Script scanning 172.16.128.1.
+Initiating NSE at 10:41
+Completed NSE at 10:41, 10.71s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 1.43s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Nmap scan report for 172.16.128.1
+Host is up (0.0022s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT   STATE    SERVICE VERSION
+22/tcp filtered ssh
+23/tcp filtered telnet
+80/tcp open     http    Cisco IOS http config
+|_http-title: Site doesn't have a title.
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: cisco-IOS
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=level_15_access
+MAC Address: 00:17:95:4F:D3:88 (Cisco Systems)
+Device type: WAP|router
+Running: Cisco IOS 12.X
+OS CPE: cpe:/h:cisco:aironet_ap350 cpe:/h:cisco:aironet_ap1100 cpe:/h:cisco:aironet_ap1200 cpe:/o:cisco:ios:12.3 cpe:/h:cisco:catalyst_2600
+OS details: Cisco Aironet 350, 1100, 1200, or 1131AG WAP; or Cisco 2600 router (IOS 12.3)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: IOS; CPE: cpe:/o:cisco:ios
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.21 ms 172.16.128.1
+
+NSE: Script Post-scanning.
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Initiating NSE at 10:41
+Completed NSE at 10:41, 0.00s elapsed
+Read data files from: C:\Program Files (x86)\Nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 24.31 seconds
+           Raw packets sent: 1029 (46.022KB) | Rcvd: 1016 (40.954KB)

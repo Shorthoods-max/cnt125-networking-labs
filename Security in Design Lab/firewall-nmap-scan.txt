@@ -1,0 +1,92 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-03 09:10 Eastern Daylight Time
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 09:10
+Completed NSE at 09:10, 0.00s elapsed
+Initiating NSE at 09:10
+Completed NSE at 09:10, 0.00s elapsed
+Initiating NSE at 09:10
+Completed NSE at 09:10, 0.00s elapsed
+Initiating ARP Ping Scan at 09:10
+Scanning 192.168.1.99 [1 port]
+Completed ARP Ping Scan at 09:10, 0.10s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:10
+Completed Parallel DNS resolution of 1 host. at 09:10, 0.03s elapsed
+Initiating SYN Stealth Scan at 09:10
+Scanning 192.168.1.99 [1000 ports]
+Discovered open port 443/tcp on 192.168.1.99
+Discovered open port 22/tcp on 192.168.1.99
+Discovered open port 80/tcp on 192.168.1.99
+Discovered open port 541/tcp on 192.168.1.99
+Completed SYN Stealth Scan at 09:10, 4.78s elapsed (1000 total ports)
+Initiating Service scan at 09:10
+Scanning 4 services on 192.168.1.99
+Completed Service scan at 09:11, 12.10s elapsed (4 services on 1 host)
+Initiating OS detection (try #1) against 192.168.1.99
+NSE: Script scanning 192.168.1.99.
+Initiating NSE at 09:11
+Completed NSE at 09:11, 5.17s elapsed
+Initiating NSE at 09:11
+Completed NSE at 09:11, 1.27s elapsed
+Initiating NSE at 09:11
+Completed NSE at 09:11, 0.00s elapsed
+Nmap scan report for 192.168.1.99
+Host is up (0.00071s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT    STATE  SERVICE     VERSION
+22/tcp  open   ssh         FortiSSH (protocol 2.0)
+| ssh-hostkey: 
+|   2048 14:01:79:4d:62:92:ac:73:08:1e:ea:38:d7:36:2a:4f (RSA)
+|_  256 ee:72:a6:f0:28:53:74:4c:e4:c2:41:34:86:51:e6:70 (ED25519)
+80/tcp  open   http        Apache httpd 2.4.41 ((Unix) OpenSSL/1.1.1 mod_fastcgi/mod_fastcgi-SNAP-0910052141)
+|_http-server-header: Apache/2.4.41 (Unix) OpenSSL/1.1.1 mod_fastcgi/mod_fastcgi-SNAP-0910052141
+|_http-title: Did not follow redirect to https://192.168.1.99:443/
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+113/tcp closed ident
+443/tcp open   ssl/http    Apache httpd 2.4.41 ((Unix) OpenSSL/1.1.1 mod_fastcgi/mod_fastcgi-SNAP-0910052141)
+| ssl-cert: Subject: commonName=FortiGate/organizationName=Fortinet Ltd.
+| Issuer: commonName=FortiGate/organizationName=Fortinet Ltd.
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-04-03T12:39:44
+| Not valid after:  2035-04-04T12:39:44
+| MD5:   6b20:5a9b:05b7:5632:7cda:4dd3:3b7a:f095
+|_SHA-1: 8c29:8be8:078e:d886:d9cc:7786:9788:17c2:7359:40cb
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: Apache/2.4.41 (Unix) OpenSSL/1.1.1 mod_fastcgi/mod_fastcgi-SNAP-0910052141
+|_http-favicon: Fortinet
+| http-methods: 
+|   Supported Methods: GET POST OPTIONS HEAD TRACE
+|_  Potentially risky methods: TRACE
+|_http-title: Site doesn't have a title (text/html).
+541/tcp open   reverse-ssl FortiGuard management service
+MAC Address: E0:23:FF:2F:F9:2C (Fortinet)
+Device type: security-misc
+Running: Fortinet FortiOS 6.X|7.X
+OS CPE: cpe:/o:fortinet:fortios:6 cpe:/o:fortinet:fortios:7
+OS details: Fortinet FortiOS 6.2 - 7.2
+Uptime guess: 0.021 days (since Thu Apr  3 08:41:27 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: CPE: cpe:/o:fortinet:fortios
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.71 ms 192.168.1.99
+
+NSE: Script Post-scanning.
+Initiating NSE at 09:11
+Completed NSE at 09:11, 0.00s elapsed
+Initiating NSE at 09:11
+Completed NSE at 09:11, 0.00s elapsed
+Initiating NSE at 09:11
+Completed NSE at 09:11, 0.00s elapsed
+Read data files from: C:\Program Files (x86)\Nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 28.41 seconds
+           Raw packets sent: 2032 (91.198KB) | Rcvd: 29 (1.610KB)
