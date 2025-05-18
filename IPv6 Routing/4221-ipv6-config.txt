@@ -1,0 +1,112 @@
+
+
+
+
+ 4221_IPv6#show run
+Building configuration...
+
+
+Current configuration : 1197 bytes
+!
+! Last configuration change at 14:09:03 UTC Thu Feb 20 2025
+!
+version 16.8
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname 4221_IPv6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+ipv6 unicast-routing
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+license udi pid ISR4221/K9 sn FGL2252102F
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ negotiation auto
+ ipv6 address FC00:A:A:C::/64 eui-64
+ ipv6 enable
+ ipv6 ospf 2 area 0
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ negotiation auto
+ ipv6 address FC00:A:A:B::/64 eui-64
+ ipv6 enable
+ ipv6 ospf 2 area 0
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+ipv6 router ospf 2
+ router-id 2.2.2.2
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ transport input none
+ stopbits 1
+line vty 0 4
+ login
+!
+wsma agent exec
+!
+wsma agent config
+!
+wsma agent filesys
+!
+wsma agent notify
+!
+!
+end

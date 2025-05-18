@@ -1,0 +1,12 @@
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . : hacc.edu
+   IPv6 Address. . . . . . . . . . . : fc00:a:a:c:0:2a:1f:43
+   IPv6 Address. . . . . . . . . . . : fc00:a:a:c:eab1:2e1d:927b:f14d
+   Temporary IPv6 Address. . . . . . : fc00:a:a:c:4906:4554:30da:e235
+   Link-local IPv6 Address . . . . . : fe80::ffe4:2375:a263:c134%19
+   IPv4 Address. . . . . . . . . . . : 172.16.128.10
+   Subnet Mask . . . . . . . . . . . : 255.255.192.0
+   Default Gateway . . . . . . . . . : fc00:a:a:c:2ee:abff:fe33:fc60
+                                       fe80::2ee:abff:fe33:fc60%19
+                                       172.16.128.1

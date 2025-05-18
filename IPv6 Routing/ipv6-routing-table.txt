@@ -1,0 +1,22 @@
+2811_IPv6#show ipv6 route
+IPv6 Routing Table - 7 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+C   FC00:A:A:A::/64 [0/0]
+     via ::, FastEthernet0/0
+L   FC00:A:A:A:217:95FF:FE4F:D388/128 [0/0]
+     via ::, FastEthernet0/0
+C   FC00:A:A:B::/64 [0/0]
+     via ::, FastEthernet0/1
+L   FC00:A:A:B:217:95FF:FE4F:D389/128 [0/0]
+     via ::, FastEthernet0/1
+O   FC00:A:A:C::/64 [110/2]
+     via FE80::2EE:ABFF:FE33:FC61, FastEthernet0/1
+L   FE80::/10 [0/0]
+     via ::, Null0
+L   FF00::/8 [0/0]
+     via ::, Null0
+2811_IPv6#

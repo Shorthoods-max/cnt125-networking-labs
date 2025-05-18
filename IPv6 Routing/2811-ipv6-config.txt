@@ -1,0 +1,132 @@
+2811_IPv6#show run
+Building configuration...
+
+Current configuration : 1419 bytes
+!
+version 12.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname 2811_IPv6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+memory-size iomem 5
+no aaa new-model
+ip subnet-zero
+!
+!
+ip cef
+!
+!
+ip ips po max-events 100
+ipv6 unicast-routing
+no ftp-server write-enable
+!
+voice-card 0
+ no dspfarm
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no crypto isakmp ccm
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address FC00:A:A:A::/64 eui-64
+ ipv6 enable
+ ipv6 ospf 2 area 0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address FC00:A:A:B::/64 eui-64
+ ipv6 enable
+ ipv6 ospf 2 area 0
+!
+interface BRI0/0/0
+ no ip address
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+ shutdown
+ no fair-queue
+ clockrate 125000
+!
+interface Serial0/1/1
+ no ip address
+ shutdown
+ clockrate 125000
+!
+interface Serial0/2/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/3/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 2
+ log-adjacency-changes
+ network 172.16.0.0 0.0.63.255 area 0
+ network 172.16.64.0 0.0.63.255 area 0
+ network 172.16.128.0 0.0.63.255 area 0
+!
+ip classless
+!
+!
+ip http server
+no ip http secure-server
+!
+ipv6 router ospf 2
+ router-id 1.1.1.1
+ log-adjacency-changes
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+warm-reboot
+scheduler allocate 20000 1000
+!
+end
+
+2811_IPv6#

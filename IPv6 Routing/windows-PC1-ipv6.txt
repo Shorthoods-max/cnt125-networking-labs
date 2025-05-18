@@ -1,0 +1,14 @@
+C:\Users\cnt-student>ipconfig
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . : hacc.edu
+   IPv6 Address. . . . . . . . . . . : fc00:a:a:a:0:c0:0:8
+   IPv6 Address. . . . . . . . . . . : fc00:a:a:a:564e:d951:79c0:c90e
+   Temporary IPv6 Address. . . . . . : fc00:a:a:a:c171:5325:e242:d2f8
+   Link-local IPv6 Address . . . . . : fe80::c590:f38e:e30b:1b58%19
+   Autoconfiguration IPv4 Address. . : 169.254.68.236
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fc00:a:a:a:217:95ff:fe4f:d388
+                                       fe80::217:95ff:fe4f:d388%19
+
