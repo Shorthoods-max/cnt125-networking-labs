@@ -1,0 +1,79 @@
+C:\Users\cnt-student>ipconfig
+
+Windows IP Configuration
+
+
+Unknown adapter OpenVPN Wintun:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Unknown adapter Local Area Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Unknown adapter OpenVPN Data Channel Offload:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 8:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . : hacc.edu
+   Link-local IPv6 Address . . . . . : fe80::ffe4:2375:a263:c134%19
+   IPv4 Address. . . . . . . . . . . : 174.40.32.102
+   Subnet Mask . . . . . . . . . . . : 255.255.224.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter Ethernet 4:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::15a:63e1:440e:1b66%5
+   IPv4 Address. . . . . . . . . . . : 192.168.212.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter Ethernet 5:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::6db:eaad:f84a:2e5%2
+   IPv4 Address. . . . . . . . . . . : 192.168.159.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter Bluetooth Network Connection 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : haccguest.hacc.edu
+
+C:\Users\cnt-student>
+C:\Users\cnt-student>ping 174.40.32.101
+
+Pinging 174.40.32.101 with 32 bytes of data:
+Reply from 174.40.32.101: bytes=32 time=1ms TTL=128
+Reply from 174.40.32.101: bytes=32 time=1ms TTL=128
+Reply from 174.40.32.101: bytes=32 time=1ms TTL=128
+Reply from 174.40.32.101: bytes=32 time=1ms TTL=128
+
+Ping statistics for 174.40.32.101:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+
+C:\Users\cnt-student>

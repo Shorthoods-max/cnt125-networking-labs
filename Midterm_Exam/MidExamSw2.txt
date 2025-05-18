@@ -1,0 +1,162 @@
+Mid_Exam_SW2#show run
+Building configuration...
+
+Current configuration : 1826 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Mid_Exam_SW2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/11
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/12
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/13
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/14
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/15
+ switchport access vlan 26
+ switchport mode access
+!
+interface FastEthernet0/16
+ switchport access vlan 36
+ switchport mode access
+!
+interface FastEthernet0/17
+ switchport access vlan 36
+ switchport mode access
+!
+interface FastEthernet0/18
+ switchport access vlan 36
+ switchport mode access
+!
+interface FastEthernet0/19
+ switchport access vlan 36
+ switchport mode access
+!
+interface FastEthernet0/20
+ switchport access vlan 36
+ switchport mode access
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+ switchport mode trunk
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 174.40.0.2 255.255.224.0
+!
+ip http server
+ip http secure-server
+!
+line con 0
+line vty 5 15
+!
+end
+
+Mid_Exam_SW2#
+Mid_Exam_SW2#show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/21, Fa0/22, Fa0/24
+                                                Gi0/1, Gi0/2
+26   Accounting                       active    Fa0/10, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15
+36   Sales                            active    Fa0/16, Fa0/17, Fa0/18, Fa0/19
+                                                Fa0/20
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+26   enet  100026     1500  -      -      -        -    -        0      0
+36   enet  100036     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    -        0      0
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+Mid_Exam_SW2#
+
