@@ -1,0 +1,12 @@
+What Method of VLAN assignment did we use in the Lab? (Explain)
+
+
+we used static vlan assignment in the lab this means we manually assigned each switch port to a vlan so when you plug a device into a port it automatically joins that vlan this keeps everything organized and helps control network traffic
+
+When you had VLANs running on your switch – How Many Broadcast Domains did you have? (Explain)
+
+the number of broadcast domains was the same as the number of vlans each vlan works like its own little network which stops unnecessary traffic from spreading to other vlans without vlans everything would be in one big broadcast domain which could slow down the network
+
+What can inter-VLAN routing accomplish in a network ?
+
+inter-vlan routing lets devices in different vlans talk to each other normally vlans keep traffic separate but inter-vlan routing uses a router or a layer 3 switch to send data between them this is useful when different teams or departments need to share info while keeping their networks organized
