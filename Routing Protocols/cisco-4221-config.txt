@@ -1,0 +1,106 @@
+Cisco4221#sh run
+Building configuration...
+
+
+Current configuration : 1160 bytes
+!
+! Last configuration change at 15:54:44 UTC Tue Mar 4 2025
+!
+version 16.8
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname Cisco4221
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+license udi pid ISR4221/K9 sn FGL2252102F
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 170.70.96.1 255.255.224.0
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ ip address 170.70.64.2 255.255.224.0
+ negotiation auto
+!
+!
+router eigrp 64512
+ network 170.70.32.0 0.0.31.255
+ network 170.70.64.0 0.0.31.255
+ network 170.70.96.0 0.0.31.255
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ transport input none
+ stopbits 1
+line vty 0 4
+ login
+!
+wsma agent exec
+!
+wsma agent config
+!
+wsma agent filesys
+!
+wsma agent notify
+!
+!
+end
+
+Cisco4221#

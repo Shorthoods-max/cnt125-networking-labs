@@ -1,0 +1,119 @@
+Cisco2811#sh run
+Building configuration...
+
+Current configuration : 1216 bytes
+!
+version 12.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Cisco2811
+!
+boot-start-marker
+boot-end-marker
+!
+!
+memory-size iomem 5
+no aaa new-model
+ip subnet-zero
+!
+!
+ip cef
+!
+!
+ip ips po max-events 100
+no ftp-server write-enable
+!
+voice-card 0
+ no dspfarm
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no crypto isakmp ccm
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 170.70.32.1 255.255.224.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 170.70.64.1 255.255.224.0
+ duplex auto
+ speed auto
+!
+interface BRI0/0/0
+ no ip address
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+ shutdown
+ no fair-queue
+ clockrate 125000
+!
+interface Serial0/1/1
+ no ip address
+ shutdown
+ clockrate 125000
+!
+interface Serial0/2/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/3/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+router eigrp 64512
+ network 170.70.32.0 0.0.31.255
+ network 170.70.64.0 0.0.31.255
+ network 170.70.96.0 0.0.31.255
+ auto-summary
+!
+ip classless
+!
+!
+ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+warm-reboot
+scheduler allocate 20000 1000
+!
+end
